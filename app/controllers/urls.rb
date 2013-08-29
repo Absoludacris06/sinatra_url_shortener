@@ -1,7 +1,11 @@
 
 post '/urls' do
   # create a new Url
-  @url = Url.create(webpage: params[:webpage])
+  user_id = nil
+  if logged_in?
+    user_id = @current_user.id
+  end
+  @url = Url.create(webpage: params[:webpage], user_id: user_id)
   erb :create
 end
 

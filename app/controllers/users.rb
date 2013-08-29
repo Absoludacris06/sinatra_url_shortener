@@ -7,7 +7,7 @@ before '/user/:id' do
 end
 
 get '/user/:id' do
-  @urls = User.find(params[:id]).urls
+  @urls = User.find(params[:id]).urls.order('created_at DESC')
   erb :user_page
 end
 
