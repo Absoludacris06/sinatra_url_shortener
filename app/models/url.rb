@@ -1,7 +1,7 @@
 class Url < ActiveRecord::Base
   # Remember to create a migration!
   validates :key, uniqueness: true
-
+  belongs_to :user
   before_create :create_key
   before_create :set_count
 

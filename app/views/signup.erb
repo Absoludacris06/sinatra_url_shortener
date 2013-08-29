@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Welcome back to Short.ly!</h1>
+  <div class="signup">
+    <h4>Signup</h4>
+    <% if !@errors.empty? %>
+        <% @errors.each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+    <% end %>
+    <form method="post" action="/signup">
+      <input type="text" name="post[name]" placeholder="Name"/>
+      <input type="email" name="post[email]" placeholder="Email"/>
+      <input type="password" name="post[new_password]" placeholder="Password"/>
+      <input type="password" name="post[new_password_confirmation]" placeholder="Password Confirmation"/>
+      <input type="submit" value="Sign Up"/>
+    </form>
+  </div>
+</div>
